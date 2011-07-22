@@ -1,7 +1,10 @@
 mkdir -p ~/Code/sites/conf
+echo "NameVirtualHost 127.0.0.1:8080" >> /etc/apache2/httpd.conf
 echo "Include /Users/zeebo/Code/sites/conf/*.conf" >> /etc/apache2/httpd.conf
 sed -iBAK "s/Listen 80/Listen 8080/" /etc/apache2/httpd.conf
 sed -iBAK "s/#LoadModule php5_module/LoadModule php5_module/" /etc/apache2/httpd.conf
+
+cp php.ini /etc/php.ini
 
 rndc-confgen -p 54 -b 256 > /etc/rndc.conf
 head -n5 /etc/rndc.conf | tail -n4 > /etc/rndc.key
