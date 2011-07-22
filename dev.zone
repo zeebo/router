@@ -1,0 +1,13 @@
+$TTL    86400
+$ORIGIN dev.
+@       IN      SOA     localhost.      leterip.gmail.com. (
+                                        42              ; serial
+                                        3H              ; refresh
+                                        15M             ; retry
+                                        1W              ; expiry
+                                        1D )            ; minimum
+
+                        1D IN NS        @
+                        1D IN A         127.0.0.1
+
+* IN A 127.0.0.1

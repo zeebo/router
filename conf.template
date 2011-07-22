@@ -1,0 +1,16 @@
+<VirtualHost 127.0.0.1:8080>
+	ServerAdmin admin@example.com
+	ServerName {0}.dev
+	DocumentRoot "/Users/zeebo/Code/sites/{0}"
+	DirectoryIndex index.html index.php default.html
+	CustomLog "/var/log/apache2/{0}.dev_access_log" combined
+	ErrorLog "/var/log/apache2/{0}.dev_error_log"
+	
+	<Directory "/Users/zeebo/Code/sites/{0}">
+		Options -Indexes FollowSymLinks
+		AllowOverride All
+		Order allow,deny
+		Allow from all
+	</Directory>
+
+</VirtualHost>
