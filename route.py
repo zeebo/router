@@ -55,7 +55,7 @@ def make_apache_confs(host):
 	conf_filename = '{}.conf'.format(host)
 	if os.path.exists(os.path.join(conf_dir, conf_filename)):
 		return
-	with open('conf.template') as conf_template:
+	with open('/Users/zeebo/Code/envs/router/router/conf.template') as conf_template:
 		template_string = conf_template.read()
 		with open(os.path.join(conf_dir, conf_filename), 'w') as handle:
 			handle.write(template_string.format(host))
